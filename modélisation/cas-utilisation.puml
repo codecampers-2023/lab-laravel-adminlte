@@ -1,0 +1,6 @@
+@startuml
+
+actor Admin
+
+Admin -- (Gestion des pages)
+Admin -- (Consulter le menu)
