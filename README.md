@@ -1,6 +1,9 @@
-# Lab  laravel-adminlte
+# lab-laravel-adminlte
+
 Easy AdminLTE integration with Laravel
+
 ## Références 
+
 - https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Installation
 
 ## Installation 
