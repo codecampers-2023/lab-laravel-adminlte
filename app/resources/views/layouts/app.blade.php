@@ -1,49 +1,13 @@
----
-layout: default
-chapitre: true
-package: mini_projet
-order: 111
----
-
-## Installation de  AdminLTE
-
-1. **Installer le package :**
-
-Utilisez Composer pour ajouter le package `jeroennoten/laravel-adminlte`, qui offre une intégration fluide d'AdminLTE avec Laravel :
-
-```bash
-composer require jeroennoten/laravel-adminlte
-```
-
-2. **Installez les ressources du package**
-
-Installez les ressources du package requises à l'aide de la commande suivante :
-
-```bash
-php artisan adminlte:install
-```
-
-````bash
-Basic assets installed successfully.
-Configuration file installed successfully.
-Translation files installed successfully.
-The installation is complete.
-````
-
-Les fichiers ajouté : 
-
-- app\config\adminlte.php
-
-
-## Création de layout : app.blade.app
-
-````php
 @extends('adminlte::page')
+
+{{-- Extend and customize the browser title --}}
 
 @section('title')
     {{ config('adminlte.title') }}
     @hasSection('subtitle') | @yield('subtitle') @endif
 @stop
+
+{{-- Extend and customize the page content header --}}
 
 @section('content_header')
     @hasSection('content_header_title')
@@ -60,10 +24,13 @@ Les fichiers ajouté :
     @endif
 @stop
 
+{{-- Rename section content to content_body --}}
+
 @section('content')
     @yield('content_body')
 @stop
 
+{{-- Create a common footer --}}
 
 @section('footer')
     <div class="float-right">
@@ -77,6 +44,7 @@ Les fichiers ajouté :
     </strong>
 @stop
 
+{{-- Add common Javascript/Jquery code --}}
 
 @push('js')
 <script>
@@ -88,9 +56,12 @@ Les fichiers ajouté :
 </script>
 @endpush
 
+{{-- Add common CSS customizations --}}
 
 @push('css')
 <style type="text/css">
+
+    {{-- You can add AdminLTE customizations here --}}
     /*
     .card-header {
         border-bottom: none;
@@ -99,9 +70,6 @@ Les fichiers ajouté :
         font-weight: 600;
     }
     */
+
 </style>
 @endpush
-````
-
-## Références 
-- [jeroennoten/Laravel-AdminLTE - Installation](https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Installation)
